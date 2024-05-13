@@ -1,0 +1,31 @@
+﻿@using MVC_CodeFirst.Models.Entities
+@model List<Movie>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sinema Projesine Hoşgeldiniz!</h1>
+<hr />
+<div class="container">
+    <div class="row">
+        @foreach(Movie m in Model)
+        {
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        @m.Title
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Director: @if(m.Director != null){@m.Director.Firstname @m.Director.Lastname}</h6>
+                        <p class="card-text">@m.Description</p>
+                        <a href="~/Home/Details/@m.ID" class="card-link">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

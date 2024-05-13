@@ -1,0 +1,26 @@
+﻿@using MVC_CodeFirst.Models.Entities
+@model Movie
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Movie Details</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    @Model.Title
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Director : @if (Model.Director != null) {@Model.Director.Firstname @Model.Director.Lastname }</h5>
+                    <p class="card-text">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
